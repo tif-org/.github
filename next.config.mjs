@@ -4,6 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         hostname: "via.placeholder.com",
+        hostname: "raw.githubusercontent.com"
       },
     ],
   },

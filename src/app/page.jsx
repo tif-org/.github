@@ -18,9 +18,7 @@ export default function Home() {
           method: "GET",
           headers: {
             Authorization: `Bearer ${GITHUB_TOKEN}`,
-          },
-          cache: "force-cache",
-          next: { revalidate: 3600 },
+          }
         });
 
         if (!res.ok) {

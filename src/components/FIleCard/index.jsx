@@ -36,7 +36,7 @@ const FileCard = ({ item, handleClick }) => {
               />
             )}
           </div>
-          <span className="w-full p-2 text-left">{item.name}</span>
+          <span className="w-full p-2 text-left">📄 {item.name}</span>
         </Link>
       )}
     </div>
