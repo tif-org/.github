@@ -1,8 +1,8 @@
-// app/components/FileCard/index.jsx
+// app/components/FileCards/index.jsx
 import Link from "next/link";
 import { MacOSFileIcon, MacOSFolderIcon } from "../Icon";
 
-const FileCard = ({ item, handleClick }) => {
+const FileCards = ({ item, handleClick }) => {
   return (
     <div className="flex flex-col items-center">
       {item.type === "dir" ? (
@@ -11,9 +11,7 @@ const FileCard = ({ item, handleClick }) => {
           onClick={() => handleClick(item.path)}
         >
           <MacOSFolderIcon />
-          <span className="w-full text-center line-clamp-2">
-            {item.name}
-          </span>
+          <span className="w-full text-center line-clamp-2">{item.name}</span>
         </div>
       ) : (
         <Link
@@ -40,11 +38,13 @@ const FileCard = ({ item, handleClick }) => {
               <MacOSFileIcon />
             )}
           </div>
-          <span className="w-full text-center bg-transparent line-clamp-2">{item.name}</span>
+          <span className="w-full text-center bg-transparent line-clamp-2">
+            {item.name}
+          </span>
         </Link>
       )}
     </div>
   );
 };
 
-export default FileCard;
+export default FileCards;

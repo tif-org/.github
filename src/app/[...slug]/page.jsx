@@ -3,7 +3,7 @@
 
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import FileCard from "@/components/FileCard";
+import FileCards from "@/components/FileCards";
 
 export default function FolderView() {
   const [contents, setContents] = useState([]);
@@ -57,7 +57,7 @@ export default function FolderView() {
     return (
       <div className="body">
         {sortedItems.map((item) => (
-          <FileCard key={item.path} item={item} handleClick={handleClick} />
+          <FileCards key={item.path} item={item} handleClick={handleClick} />
         ))}
       </div>
     );

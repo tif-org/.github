@@ -1,9 +1,9 @@
 // app/page.jsx
 "use client";
 
+import FileCards from "@/components/FileCards";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import FileCard from "@/components/FileCard";
 
 export default function Home() {
   const [contents, setContents] = useState([]);
@@ -66,7 +66,7 @@ export default function Home() {
     return (
       <div className="body">
         {sortedItems.map((item) => (
-          <FileCard key={item.path} item={item} handleClick={handleClick} />
+          <FileCards key={item.path} item={item} handleClick={handleClick} />
         ))}
       </div>
     );
