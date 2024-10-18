@@ -1,7 +1,5 @@
-const Loading = () => {
-  return (
-    <div>Memuat...</div>
-  )
-}
+const LoadingPage = () => {
+  return <div>Memuat...</div>;
+};
 
-export default Loading
+export default LoadingPage;

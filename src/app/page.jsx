@@ -1,6 +1,7 @@
+// app/page.jsx
 "use client";
 
-import FileCard from "@/components/FIleCard";
+import FileCard from "@/components/FileCard";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -18,7 +19,7 @@ export default function Home() {
           method: "GET",
           headers: {
             Authorization: `Bearer ${GITHUB_TOKEN}`,
-          }
+          },
         });
 
         if (!res.ok) {
@@ -58,12 +59,12 @@ export default function Home() {
     }
 
     // Pisahkan folder dan file
-    const folders = items.filter(item => item.type === "dir");
-    const files = items.filter(item => item.type !== "dir");
+    const folders = items.filter((item) => item.type === "dir");
+    const files = items.filter((item) => item.type !== "dir");
     const sortedItems = [...folders, ...files];
 
     return (
-      <div className="grid grid-cols-2 gap-2">
+      <div className="body">
         {sortedItems.map((item) => (
           <FileCard key={item.path} item={item} handleClick={handleClick} />
         ))}
@@ -72,9 +73,9 @@ export default function Home() {
   };
 
   return (
-    <div className="container p-4">
+    <div className="container">
       {/* <h1 className="mb-4 text-3xl font-bold"></h1> */}
-      <div className="p-4 bg-white">
+      <div className="bg-white">
         {loading ? ( // Tampilkan loader jika loading
           <p>Memuat data...</p>
         ) : (

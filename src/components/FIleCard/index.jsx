@@ -1,3 +1,4 @@
+// app/components/FileCard/index.jsx
 import Link from "next/link";
 
 const FileCard = ({ item, handleClick }) => {
@@ -8,7 +9,7 @@ const FileCard = ({ item, handleClick }) => {
           className="flex flex-col items-center w-full h-full transition-all border rounded cursor-pointer hover:shadow"
           onClick={() => handleClick(item.path)}
         >
-          <strong className="w-full p-2 text-left text-blue-500">
+          <strong className="w-full p-2 text-left text-blue-500 line-clamp-1">
             📁 {item.name}
           </strong>
         </div>
@@ -19,7 +20,7 @@ const FileCard = ({ item, handleClick }) => {
           rel="noopener noreferrer"
           className="flex flex-col items-center w-full h-full transition-all border rounded hover:shadow"
         >
-          <div className="h-20 overflow-hidden">
+          <div className="overflow-hidden h-14">
             {item.name.endsWith(".png") ||
             item.name.endsWith(".jpg") ||
             item.name.endsWith(".jpeg") ? (
@@ -36,7 +37,9 @@ const FileCard = ({ item, handleClick }) => {
               />
             )}
           </div>
-          <span className="w-full p-2 text-left">📄 {item.name}</span>
+          <span className="w-full p-2 text-left line-clamp-1">
+            📄 {item.name}
+          </span>
         </Link>
       )}
     </div>
