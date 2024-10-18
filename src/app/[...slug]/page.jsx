@@ -6,16 +6,19 @@ import FileCard from "@/components/FIleCard";
 
 export default function FolderView() {
   const [contents, setContents] = useState([]);
-  const [loading, setLoading] = useState(true); // State untuk loading
+  const [loading, setLoading] = useState(true);
   const router = useRouter();
   const pathname = usePathname();
   const slug = pathname.replace(/^\//, '');
+
+  // Decode slug dari URI
+  const decodedSlug = decodeURIComponent(slug);
 
   useEffect(() => {
     if (!slug) return;
 
     const fetchRepoContents = async () => {
-      setLoading(true); // Set loading menjadi true saat mengambil data
+      setLoading(true);
       try {
         const res = await fetch(`/api/repo?path=${slug}`, {
           cache: "force-cache",
@@ -33,7 +36,7 @@ export default function FolderView() {
         console.error('Error fetching data:', error);
         setContents([]);
       } finally {
-        setLoading(false); // Set loading menjadi false setelah data diambil
+        setLoading(false);
       }
     };
 
@@ -64,9 +67,9 @@ export default function FolderView() {
 
   return (
     <div className="container p-4">
-      <h1 className="mb-4 text-3xl font-bold">{slug}</h1>
+      <h1 className="mb-4 text-3xl font-bold">{decodedSlug}</h1>
       <div className="p-4 bg-white">
-        {loading ? ( // Tampilkan loader jika loading
+        {loading ? (
           <p>Memuat data...</p>
         ) : (
           renderContents(contents)
