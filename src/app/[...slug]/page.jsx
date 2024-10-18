@@ -20,10 +20,7 @@ export default function FolderView() {
     const fetchRepoContents = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`/api/repo?path=${slug}`, {
-          cache: "force-cache",
-          next: { revalidate: 3600 }
-        });
+        const res = await fetch(`/api/repo?path=${slug}`);
         const data = await res.json();
 
         if (Array.isArray(data)) {
