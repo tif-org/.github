@@ -1,9 +1,9 @@
 // app/page.jsx
 "use client";
 
-import FileCard from "@/components/FileCard";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import FileCard from "@/components/FileCard";
 
 export default function Home() {
   const [contents, setContents] = useState([]);
