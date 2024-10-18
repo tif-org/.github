@@ -73,7 +73,7 @@ export default function Home() {
   };
 
   return (
-    <div className="container">
+    <div className="container p-4">
       {/* <h1 className="mb-4 text-3xl font-bold"></h1> */}
       <div className="bg-white">
         {loading ? ( // Tampilkan loader jika loading

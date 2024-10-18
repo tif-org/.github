@@ -1,26 +1,28 @@
 // app/components/FileCard/index.jsx
 import Link from "next/link";
+import { MacOSFileIcon, MacOSFolderIcon } from "../Icon";
 
 const FileCard = ({ item, handleClick }) => {
   return (
     <div className="flex flex-col items-center">
       {item.type === "dir" ? (
         <div
-          className="flex flex-col items-center w-full h-full transition-all border rounded cursor-pointer hover:shadow"
+          className="flex flex-col items-center cursor-pointer hover:text-cyan-600 w-28"
           onClick={() => handleClick(item.path)}
         >
-          <strong className="w-full p-2 text-left text-blue-500 line-clamp-1">
-            📁 {item.name}
-          </strong>
+          <MacOSFolderIcon />
+          <span className="w-full text-center line-clamp-2">
+            {item.name}
+          </span>
         </div>
       ) : (
         <Link
           href={item.download_url}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-center w-full h-full transition-all border rounded hover:shadow"
+          className="flex flex-col items-center cursor-pointer hover:text-cyan-600 w-28 max-h-28"
         >
-          <div className="overflow-hidden h-14">
+          <div className="h-[70px] overflow-hidden">
             {item.name.endsWith(".png") ||
             item.name.endsWith(".jpg") ||
             item.name.endsWith(".jpeg") ? (
@@ -30,16 +32,15 @@ const FileCard = ({ item, handleClick }) => {
                 className="object-cover w-full mb-2"
               />
             ) : (
-              <img
-                src="https://via.placeholder.com/150" // Gambar dummy
-                alt="Dummy"
-                className="object-cover w-full mb-2"
-              />
+              // <img
+              //   src="https://via.placeholder.com/150" // Gambar dummy
+              //   alt="Dummy"
+              //   className="object-cover w-full mb-2"
+              // />
+              <MacOSFileIcon />
             )}
           </div>
-          <span className="w-full p-2 text-left line-clamp-1">
-            📄 {item.name}
-          </span>
+          <span className="w-full text-center bg-transparent line-clamp-2">{item.name}</span>
         </Link>
       )}
     </div>

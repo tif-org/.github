@@ -64,8 +64,8 @@ export default function FolderView() {
   };
 
   return (
-    <div className="container">
-      <h1 className="mb-4 text-3xl font-bold">{decodedSlug}</h1>
+    <div className="container p-4">
+      <h1 className="mb-4 text-xl font-bold">{decodedSlug}</h1>
       <div className="bg-white">
         {loading ? <p>Memuat data...</p> : renderContents(contents)}
       </div>

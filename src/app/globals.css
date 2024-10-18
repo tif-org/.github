@@ -3,5 +3,9 @@
 @tailwind utilities;
 
 .body {
-  @apply grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1;
+  @apply flex flex-wrap gap-2;
+}
+
+*{
+  @apply text-gray-800;
 }
