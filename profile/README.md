@@ -1,4 +1,4 @@
 # Anggota Organisasi
 
-| Foto Profil | Anggota |
+| Foto Profil | Nama Anggota |
 | --- | --- |
