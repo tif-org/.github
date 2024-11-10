@@ -27,7 +27,7 @@ def update_readme(content):
 def main():
     members = get_org_members(ORG_NAME)
     table_content = generate_markdown_table(members)
-    readme_content = f"
+    readme_content = f"# Anggota Organisasi\n\n{table_content}"
     update_readme(readme_content)
 
 if __name__ == "__main__":
