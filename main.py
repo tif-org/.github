@@ -1,18 +1,22 @@
 import requests
 import os
 
-ORG_NAME = "tif-org"  
+ORG_NAME = "tif-org"
 README_PATH = "profile/README.md"
 
 def get_org_members(org_name):
     url = f"https://api.github.com/orgs/{org_name}/members"
-    headers = {"Authorization": f"token {os.getenv('GITHUB_TOKEN')}"}
+    headers = {
+        "Authorization": f"Bearer {os.getenv('GITHUB_TOKEN')}",
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28"
+    }
     response = requests.get(url, headers=headers)
     response.raise_for_status()
     return response.json()
 
 def generate_markdown_table(members):
-    table = "| Foto Profil | Anggota |\n| --- | --- |\n"
+    table = "| Foto Profil | Nama Anggota |\n| --- | --- |\n"
     for member in members:
         profile_url = member['html_url']
         avatar_url = member['avatar_url']
