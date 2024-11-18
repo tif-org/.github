@@ -11,5 +11,5 @@
 
 | Repository | Komit Terbaru | Tanggal |
 | --- | --- | --- |
-| .github | [Update README with organization members](https://github.com/tif-org/.github/commit/b6754cb7266b8e695414f9ee1c713707d36cf9f3) | 2024-11-16 00:49 |
+| .github | [Update README with organization members](https://github.com/tif-org/.github/commit/a9e146fc0ab7e0497aa75653bb0723467785a3b0) | 2024-11-17 00:53 |
 
