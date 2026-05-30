@@ -12,6 +12,6 @@
 
 | Repository | Komit Terbaru | Tanggal |
 | --- | --- | --- |
-| .github | [Update README with organization members](https://github.com/tif-org/.github/commit/9a4603c8fafb2421153f1cec1ff5079b70a4658e) | 2026-05-28 04:16 |
+| .github | [Update README with organization members](https://github.com/tif-org/.github/commit/28d5beac3605acafaca0c3a020fbda5c324f7f14) | 2026-05-29 04:19 |
 | rekber | [add: signin & signup page](https://github.com/tif-org/rekber/commit/26bc93d0ebfbb6108921d509ecc1c1ebf7528fa4) | 2025-07-13 05:49 |
 
